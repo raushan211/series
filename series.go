@@ -10,21 +10,15 @@ func main() {
 	var num int
 	fmt.Scanln(&num)
 
-	if num < 2 {
-		fmt.Println("error")
-	} else {
-
-		fmt.Print(a)
-		fmt.Print(",")
-		fmt.Print(b)
-		fmt.Print(",")
-
-		for i := 3; i <= num; i++ {
-			c = a + b
-			fmt.Print(c)
-			//fmt.Print(",")
-			a = b
-			b = c
+	fmt.Print(a, ", ", b, ", ")
+	for i := 2; i < num; i++ {
+		c = a + b
+		a = b
+		b = c
+		if i == num-1 {
+			fmt.Print(c, "\n")
+		} else {
+			fmt.Print(c, ", ")
 		}
 	}
 
